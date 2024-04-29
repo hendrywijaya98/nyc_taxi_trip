@@ -1,0 +1,79 @@
+version: 2
+
+sources:
+  - name: taxi_nyc
+    tables:
+      - name: taxitrip_clean
+         columns:
+          - name: VendorID
+            tests: 
+              - not_null
+              - accepted_values:
+                  values: [0, 1, 2]
+          - name: lpep_pickup_datetime
+            tests: 
+              - not_null
+          - name: lpep_dropoff_datetime
+            tests: 
+              - not_null
+          - name: store_and_fwd_flag
+            tests: 
+              - not_null
+          - name: RatecodeID
+            tests: 
+              - not_null
+              - accepted_values:
+                  values: [0, 1, 2, 3, 4, 5]
+          - name: PULocationID
+            tests: 
+              - not_null
+          - name: DOLocationID
+            tests: 
+              - not_null
+          - name: passenger_count
+            tests: 
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 1
+          - name: trip_distance
+            tests: 
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0
+          - name: fare_amount
+            tests: 
+              - not_null
+          - name: extra
+            tests: 
+              - not_null
+          - name: mta_tax
+            tests: 
+              - not_null
+          - name: tip_amount
+            tests: 
+              - not_null
+          - name: tolls_amount
+            tests: 
+              - not_null
+          - name: ehail_fee
+            tests: 
+              - not_null
+          - name: improvement_surcharge
+            tests: 
+              - not_null
+          - name: total_amount
+            tests: 
+              - not_null
+          - name: payment_type
+            tests: 
+              - not_null
+              - accepted_values:
+                  values: [0, 1, 2, 3, 4, 5]
+          - name: trip_type
+            tests: 
+              - not_null
+              - accepted_values:
+                  values: [0, 1, 2]
+          - name: congestion_surc
+            tests: 
+              - not_null

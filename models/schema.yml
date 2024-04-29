@@ -1,0 +1,156 @@
+version: 2
+
+models:
+  - name: taxitrip_clean
+    columns:
+      - name: vendor_id
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2]
+      - name: pickup_datetime
+        tests: 
+          - not_null
+      - name: dropoff_datetime
+        tests: 
+          - not_null
+      - name: store_forward_flag
+        tests: 
+          - not_null
+      - name: rate_code_id
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+      - name: pickup_loc_id
+        tests: 
+          - not_null
+      - name: dropoff_loc_id
+        tests: 
+          - not_null
+      - name: passenger_count
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+      - name: trip_distance
+        tests: 
+          - not_null
+      - name: trip_durat_sec
+        tests: 
+          - not_null
+      - name: fare_amount
+        tests: 
+          - not_null
+      - name: extra
+        tests: 
+          - not_null
+      - name: mta_tax
+        tests: 
+          - not_null
+      - name: tip_amount
+        tests: 
+          - not_null
+      - name: tolls_amount
+        tests: 
+          - not_null
+      - name: ehail_fee
+        tests: 
+          - not_null
+      - name: improvement_surcharge
+        tests: 
+          - not_null
+      - name: total_amount
+        tests: 
+          - not_null
+      - name: payment_type
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+      - name: trip_type
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2]
+      - name: congestion_surc
+        tests: 
+          - not_null
+      - name: total_transac
+        tests: 
+          - not_null
+  - name: taxitrip_activity
+    columns:
+      - name: year
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [2021, 2022, 2023, 2024]
+      - name: month
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 12
+      - name: rate_code_id
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+      - name: trip_type
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2]
+      - name: payment_type
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+      - name: vendor_id
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2]
+      - name: total_trip
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: total_durat_sec
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: total_passenger
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+      - name: total_fare_idr
+        tests: 
+          - not_null
+      - name: total_extra_idr
+        tests: 
+          - not_null
+      - name: total_mtatax_idr
+        tests: 
+          - not_null
+      - name: total_tip_idr
+        tests: 
+          - not_null
+      - name: total_tolls_idr
+        tests: 
+          - not_null
+      - name: total_impro_suchar_idr
+        tests: 
+          - not_null
+      - name: total_amount_idr
+        tests: 
+          - not_null
+      - name: total_congest_suchar_idr
+        tests: 
+          - not_null
+      - name: total_transac_idr
+        tests: 
+          - not_null
