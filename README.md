@@ -63,24 +63,24 @@ Try running the following commands:
   FROM `rapid-bricolage-344711.taxi_nyc.taxitrip_activity`
   GROUP BY year, month
   ```
-  ![](nyc_taxi_trip\document_images\monthly_passanger_query.PNG)
-  ![](nyc_taxi_trip\document_images\monthly_passanger_chart.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_passanger_query.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_passanger_chart.PNG)
 - Monthly transactions per payment type
   ```
   SELECT year, month, payment_type, SUM(total_transac_idr) as total_transact_idr
   FROM `rapid-bricolage-344711.taxi_nyc.taxitrip_activity`
   GROUP BY year, month, payment_type
   ```
-  ![](nyc_taxi_trip\document_images\monthly_transact_query.PNG)
-  ![](nyc_taxi_trip\document_images\transact_by_payments.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_transact_query.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_trip_by_ratecode.PNG)
 - Monthly trip distance per rate code
   ```
   SELECT year, month, rate_code_id, SUM(total_trip) as total_tripdist
   FROM `rapid-bricolage-344711.taxi_nyc.taxitrip_activity`
   GROUP BY year, month, rate_code_id
   ```
-  ![](nyc_taxi_trip\document_images\monthly_tripdist_query.PNG)
-  ![](nyc_taxi_trip\document_images\monthly_trip_by_ratecode.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_tripdist_query.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/transact_by_payments.PNG)
 
 check on my visualization on [NYC Taxi Trip report](https://lookerstudio.google.com/s/pt8Qw7h604M)
 
