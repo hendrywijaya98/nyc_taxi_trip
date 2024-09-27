@@ -16,16 +16,17 @@ Try running the following commands:
 
 ## Project Documentations
 - Data Cleaning on Null Columns on [taxitrip data cleaning](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/models/taxitrip_clean.sql)
-  ``` EXCEPT(VendorID, store_and_fwd_flag, RatecodeID, passenger_count, 
-      ehail_fee, payment_type, trip_type, congestion_surcharge), 
-      IFNULL(VendorID, 0) AS VendorID, 
-      IFNULL(store_and_fwd_flag, 'N') AS store_and_fwd_flag, 
-      IFNULL(RatecodeID, 0) AS RatecodeID, 
-      IFNULL(passenger_count, 0) AS passenger_count, 
-      IFNULL(ehail_fee, 0) AS ehail_fee, 
-      IFNULL(payment_type, 0) AS payment_type, 
-      IFNULL(trip_type, 0) AS trip_type, 
-      IFNULL(congestion_surcharge, 0) AS congestion_surcharge
+  ```
+  EXCEPT(VendorID, store_and_fwd_flag, RatecodeID, passenger_count,
+          ehail_fee, payment_type, trip_type, congestion_surcharge), 
+  IFNULL(VendorID, 0) AS VendorID, 
+  IFNULL(store_and_fwd_flag, 'N') AS store_and_fwd_flag, 
+  IFNULL(RatecodeID, 0) AS RatecodeID, 
+  IFNULL(passenger_count, 0) AS passenger_count, 
+  IFNULL(ehail_fee, 0) AS ehail_fee, 
+  IFNULL(payment_type, 0) AS payment_type, 
+  IFNULL(trip_type, 0) AS trip_type, 
+  IFNULL(congestion_surcharge, 0) AS congestion_surcharge
   ```
 - ganti value store_and_fwd_flag jadi boolean [taxitrip data cleaning](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/models/taxitrip_clean.sql)   
   ```
