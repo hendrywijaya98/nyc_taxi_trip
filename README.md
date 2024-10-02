@@ -73,7 +73,8 @@ Try running the following commands:
   GROUP BY year, month, payment_type
   ```
   ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_transact_query.PNG)
-  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_trip_by_ratecode.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/transact_by_payments.PNG)
+
 - Monthly trip distance per rate code
   ```
   SELECT year, month, rate_code_id, SUM(total_trip) as total_tripdist
@@ -81,7 +82,7 @@ Try running the following commands:
   GROUP BY year, month, rate_code_id
   ```
   ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_tripdist_query.PNG)
-  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/transact_by_payments.PNG)
+  ![](https://github.com/hendrywijaya98/nyc_taxi_trip/blob/main/document_images/monthly_trip_by_ratecode.PNG)  
 
 check on my visualization on [NYC Taxi Trip report](https://lookerstudio.google.com/s/pt8Qw7h604M)
 
